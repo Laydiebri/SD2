@@ -17,8 +17,8 @@ let db = new sqlite3.Database("studentz.db", function(err) {
 // SQL query to run
 var sql = "SELECT * FROM Modules";
 
-// Execute SQL query, and run function on every row returned.
-db.each(sql, function(err, row) {
+// Execute SQL query, and run function on first row.
+db.get(sql, function(err, row) {
     // If error display
     if (err) {
         return console.error(err.message);
